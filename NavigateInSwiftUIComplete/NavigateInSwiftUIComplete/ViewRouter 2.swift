@@ -17,7 +17,7 @@ class ViewRouter: BindableObject {
     var currentPage: String = "page1" {
         didSet {
             withAnimation() {
-                willChange.send(self)
+              willChange.send(self)
             }
         }
     }

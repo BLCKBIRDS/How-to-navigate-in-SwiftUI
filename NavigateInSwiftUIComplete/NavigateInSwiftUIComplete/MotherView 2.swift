@@ -16,8 +16,9 @@ struct MotherView : View {
         VStack {
             if viewRouter.currentPage == "page1" {
                 ContentViewA()
-            } else {
+            } else if viewRouter.currentPage == "page2" {
                 ContentViewB()
+                    .transition(.scale)
             }
         }
     }
