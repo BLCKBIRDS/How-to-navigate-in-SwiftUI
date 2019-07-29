@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ContentViewA : View {
     
-    @EnvironmentObject var viewRouter: ViewRouter
+    @ObjectBinding var viewRouter: ViewRouter
     
     var body: some View {
         VStack {
@@ -25,7 +25,7 @@ struct ContentViewA : View {
 #if DEBUG
 struct ContentViewA_Previews : PreviewProvider {
     static var previews: some View {
-        ContentViewA().environmentObject(ViewRouter())
+        ContentViewA(viewRouter: ViewRouter())
     }
 }
 #endif
