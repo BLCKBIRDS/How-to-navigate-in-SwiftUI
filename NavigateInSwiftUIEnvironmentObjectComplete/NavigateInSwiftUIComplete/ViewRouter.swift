@@ -10,14 +10,14 @@ import Foundation
 import Combine
 import SwiftUI
 
-class ViewRouter: BindableObject {
+class ViewRouter: ObservableObject {
     
-    let willChange = PassthroughSubject<ViewRouter,Never>()
+    let objectWillChange = PassthroughSubject<ViewRouter,Never>()
     
     var currentPage: String = "page1" {
         didSet {
             withAnimation() {
-                willChange.send(self)
+                objectWillChange.send(self)
             }
         }
     }
